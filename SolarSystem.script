@@ -1,0 +1,18 @@
+#!/bin/gnuplot -persist
+set terminal x11
+set size square
+set xrange [-5e12:5e12]
+set yrange [-5e12:5e12]
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1   # --- blue
+set style line 2 lc rgb '#808080' lt 1 lw 2 pt 7 ps 0.75   # --- grey
+set style line 3 lc rgb '#FFFF00' lt 1 lw 2 pt 7 ps 2   # --- yellow
+set style line 4 lc rgb '#D2691E' lt 1 lw 2 pt 7 ps 1   # --- brown
+set style line 5 lc rgb '#FF4500' lt 1 lw 2 pt 7 ps 1   # --- orange
+set style line 6 lc rgb '#8F1500' lt 1 lw 2 pt 7 ps 1   # --- red
+set style line 7 lc rgb '#D0A002' lt 1 lw 2 pt 7 ps 1.5   # --- gold
+set style line 8 lc rgb '#AC8504' lt 1 lw 2 pt 7 ps 1.2   # --- dark gold
+set style line 9 lc rgb '#108902' lt 1 lw 2 pt 7 ps 1   # --- dark green
+set style line 10 lc rgb '#021977' lt 1 lw 2 pt 7 ps 1   # --- dark blue
+
+plot 'Evolution.dat' skip 1 using 1:2 with linespoints ls 1 t "Earth", '' skip 1 using 4:5 with linespoints ls 3 t "Sun", '' skip 1 using 7:8 with linespoints ls 2 t "The Moon", '' skip 1 using 10:11 with linespoints ls 4 t "Mercury", '' skip 1 using 13:14 with linespoints ls 5 t "Venus", '' skip 1 using 16:17 with linespoints ls 6 t "Mars", '' skip 1 using 19:20 with linespoints ls 7 t "Jupiter", '' skip 1 using 22:23 with linespoints ls 8 t "Saturn", '' skip 1 using 25:26 with linespoints ls 9 t "Uranus", '' skip 1 using 28:29 with linespoints ls 10 t "Neptune"
+exit
